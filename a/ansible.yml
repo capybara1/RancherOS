@@ -1,5 +1,5 @@
 console:
-  image: capybara1/alpine-console:latest
+  image: capybara1/ansible-console:latest
   command: ros console-init
   privileged: true
   labels:
