@@ -9,5 +9,6 @@ docker-gc:
     EXCLUDE_CONTAINERS_FROM_GC: /etc/docker-gc/exclude-containers
     EXCLUDE_VOLUMES_IDS_FILE: /etc/docker-gc/exclude-volumes
   labels:
+    io.rancher.os.scope: system
     io.rancher.os.remove: "true"
     cron.schedule: "@daily"
