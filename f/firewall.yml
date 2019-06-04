@@ -1,15 +1,11 @@
 firewall:
   cap_add:
   - NET_ADMIN
-  - NET_RAW
   image: capybara1/firewall:1.0
   labels:
-    io.rancher.os.after: wait-for-network, cloud-init
+    io.rancher.os.after: wait-for-network, console
     io.rancher.os.detach: "false"
     io.rancher.os.remove: "true"
-    io.rancher.os.scope: system
   net: host
   volumes:
-  - /etc/iptables/state:/etc/iptables/state:ro
-  volumes_from:
-  - system-volumes
+  - /etc/iptables:/host/etc/iptables:ro
