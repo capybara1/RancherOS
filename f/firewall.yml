@@ -12,4 +12,4 @@ firewall:
   volumes:
   - /etc/iptables/state:/etc/iptables/state:ro
   volumes_from:
-  - user-volumes
+  - system-volumes
