@@ -2,7 +2,7 @@ firewall:
   cap_add:
   - NET_ADMIN
   - NET_RAW
-  image: capybara1/firewall:latest
+  image: capybara1/firewall:1.0
   labels:
     io.rancher.os.after: wait-for-network, cloud-init
     io.rancher.os.detach: "false"
