@@ -1,5 +1,6 @@
 services:
-- firewall
+- dns
 - docker-gc
+- firewall
 consoles:
 - ansible

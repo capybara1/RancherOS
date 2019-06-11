@@ -4,8 +4,9 @@ Custom repository with Docker images for RancherOS
 
 ## Services
 
-- `firewall` provides a service that restores iptable rules during bootup
+- `dns` provides a DNS service based on bind
 - `docker-gc` provides the docker-gc from Spotify
+- `firewall` provides a service that restores iptable rules during bootup
 
 ## Consoles
 

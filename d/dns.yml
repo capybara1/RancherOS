@@ -1,0 +1,8 @@
+docker-gc:
+  image: capybara1/dns:1.0
+  container_name: dns
+  ports:
+  - 53:53/udp
+  volumes:
+  - /etc/bind:/etc/bind
+  restart: always
