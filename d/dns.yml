@@ -1,4 +1,4 @@
-docker-gc:
+dns:
   image: capybara1/dns:1.0
   container_name: dns
   ports:
