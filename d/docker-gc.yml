@@ -3,7 +3,7 @@ docker-gc:
   privileged: true
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - /etc/docker-gc:/etc/docker-gc:ro
+    - /usr/local/etc/docker-gc:/etc/docker-gc:ro
   environment:
     EXCLUDE_FROM_GC: /etc/docker-gc/exclude-images
     EXCLUDE_CONTAINERS_FROM_GC: /etc/docker-gc/exclude-containers

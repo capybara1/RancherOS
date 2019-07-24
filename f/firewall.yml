@@ -8,4 +8,5 @@ firewall:
     io.rancher.os.remove: "true"
   net: host
   volumes:
-  - /etc/iptables:/host/etc/iptables:ro
+  - /usr/local/etc/iptables:/host/etc/iptables:ro
+  - /usr/local/etc/ip6tables:/host/etc/ip6tables:ro

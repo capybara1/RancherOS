@@ -5,5 +5,5 @@ dns:
     - 53:53/udp
     - 53:53/tcp
   volumes:
-    - /etc/bind:/etc/bind
+    - /usr/local/etc/bind:/etc/bind
   restart: always
