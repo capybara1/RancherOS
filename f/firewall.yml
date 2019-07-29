@@ -1,12 +1,17 @@
 firewall:
   cap_add:
-  - NET_ADMIN
+    - NET_ADMIN
   image: capybara1/firewall:1.0
   labels:
+    io.rancher.os.scope: system
     io.rancher.os.after: wait-for-network, console
     io.rancher.os.detach: "false"
     io.rancher.os.remove: "true"
   net: host
   volumes:
-  - /usr/local/etc/iptables:/host/etc/iptables:ro
-  - /usr/local/etc/ip6tables:/host/etc/ip6tables:ro
+    - /usr/local/etc/iptables:/etc/iptables:ro
+    - /usr/local/etc/ip6tables:/etc/ip6tables:ro
+  init: true
+  command: >
+    /bin/sh -c '/sbin/iptables-restore -n < /etc/iptables/state;
+    /sbin/ip6tables --list 2> /dev/null && /sbin/ip6tables-restore -n < /etc/ip6tables/state'
