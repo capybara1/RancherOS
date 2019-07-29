@@ -8,10 +8,10 @@ console:
     io.docker.compose.rebuild: "false"
     io.rancher.os.console: ansible
   volumes_from:
-  - all-volumes
+    - all-volumes
   volumes:
-  - /media:/media:shared
-  - /mnt:/mnt:shared
+    - /media:/media:shared
+    - /mnt:/mnt:shared
   restart: always
   pid: host
   ipc: host
