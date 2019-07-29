@@ -2,5 +2,6 @@ services:
 - dns
 - docker-gc
 - firewall
+- system-docker-gc
 consoles:
 - ansible

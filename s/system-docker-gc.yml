@@ -1,0 +1,14 @@
+system-docker-gc:
+  image: spotify/docker-gc
+  privileged: true
+  volumes:
+    - /var/run/system-docker.sock:/var/run/docker.sock
+    - /usr/local/etc/docker-gc:/etc/docker-gc:ro
+  environment:
+    EXCLUDE_FROM_GC: /etc/docker-gc/exclude-images
+    EXCLUDE_CONTAINERS_FROM_GC: /etc/docker-gc/exclude-containers
+    EXCLUDE_VOLUMES_IDS_FILE: /etc/docker-gc/exclude-volumes
+  labels:
+    io.rancher.os.scope: system
+    io.rancher.os.remove: "true"
+    cron.schedule: "@daily"
